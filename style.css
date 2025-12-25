@@ -126,6 +126,22 @@ body {
   background: #16a085;
 }
 
+.btn-cert {
+  display: inline-block;
+  background: #3498db;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+  margin-top: 15px;
+}
+
+.btn-cert:hover {
+  background: #2980b9;
+}
+
 /* Карточки */
 .courses-grid,
 .projects-grid {
@@ -141,10 +157,40 @@ body {
   padding: 25px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.08);
   transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
   transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.card p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.project-link {
+  display: inline-block;
+  background: #2c3e50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background 0.3s;
+  text-align: center;
+}
+
+.project-link:hover {
+  background: #1abc9c;
 }
 
 .cert-img {
@@ -156,6 +202,10 @@ body {
 /* Сертификаты */
 .certificates {
   margin-top: 50px;
+  text-align: center;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 15px;
 }
 
 .cert-grid {
@@ -184,18 +234,25 @@ body {
   margin-bottom: 25px;
 }
 
+.skill span {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
 .progress-bar {
   height: 20px;
   background: #ecf0f1;
   border-radius: 10px;
   overflow: hidden;
-  margin-top: 8px;
 }
 
 .progress-fill {
   height: 100%;
   background: #1abc9c;
   border-radius: 10px;
+  transition: width 0.5s ease;
 }
 
 /* Иконки навыков */
@@ -214,6 +271,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: 0.9rem;
 }
 
 /* Ссылки */
@@ -225,16 +283,21 @@ body {
 }
 
 .links a {
-  color: #1abc9c;
+  background: #2c3e50;
+  color: white;
   text-decoration: none;
   font-weight: bold;
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  transition: background 0.3s;
 }
 
 .links a:hover {
-  text-decoration: underline;
+  background: #1abc9c;
+  text-decoration: none;
 }
 
 /* Подвал */
@@ -249,10 +312,15 @@ body {
 .footer a {
   color: #1abc9c;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+.footer p {
+  margin-bottom: 10px;
 }
 
 /* Адаптивность */
@@ -260,63 +328,48 @@ body {
   .header h1 {
       font-size: 2rem;
   }
+  
   .specialization {
       font-size: 1rem;
   }
+  
   .navbar ul {
       flex-direction: column;
       align-items: center;
   }
+  
   .navbar li {
       margin: 5px 0;
   }
+  
+  .projects-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .skills-icons {
+      justify-content: center;
+  }
+  
+  .links {
+      justify-content: center;
+  }
+  
   .cert-grid {
       grid-template-columns: repeat(2, 1fr);
   }
-/* Общие стили для сертификатов */
-.certificates {
-    margin-top: 60px;
-    padding: 30px;
-    background: #f8f9fa;
-    border-radius: 15px;
 }
 
-.certificates h3 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #2c3e50;
-    font-size: 1.8rem;
-}
-
-/* Сетка сертификатов - исправленная */
-.cert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
-    justify-items: center;
-}
-/* Общие стили для сертификатов */
-.certificates {
-    margin-top: 60px;
-    padding: 30px;
-    background: #f8f9fa;
-    border-radius: 15px;
-    border: 1px solid #e0e0e0;
-}
-
-.certificates h3 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #2c3e50;
-    font-size: 1.8rem;
-}
-
-/* Сетка сертификатов */
-.cert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    justify-items: center;
-    align-items: start; /* Важно: выравнивание по верхнему краю */
-}
+@media (max-width: 480px) {
+  .card {
+      padding: 20px;
+  }
+  
+  .section h2 {
+      font-size: 1.8rem;
+  }
+  
+  .btn, .btn-cert, .project-link {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+  }
 }
